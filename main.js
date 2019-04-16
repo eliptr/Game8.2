@@ -8,7 +8,7 @@ function onload() {
   document.addEventListener("deviceready", test, false);
 }
 
-document.addEventListener("menubutton", function () {
+document.addEventListener("pause", function () {
   localStorage.setItem('date', Date());
 }, false);
 
@@ -26,7 +26,7 @@ var windowHeight = window.innerHeight;
 var pixelRatio = window.devicePixelRatio || 1; /// get pixel ratio of device
 var b = true;
 var height = 119.4;
-var text = localStorage.getItem('date');
+var text;
 
 // load images
 var piece = new Image();
@@ -65,6 +65,11 @@ function test() {
 
   text = localStorage.getItem('date');
 
+  if (localStorage.getItem('date')) {
+    text = localStorage.getItem('date');
+  } else {
+    text = "Sorry bro";
+  }
   draw()
 }
 
