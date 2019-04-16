@@ -8,7 +8,7 @@ function onload() {
   document.addEventListener("deviceready", test, false);
 }
 
-document.addEventListener("pause", function () {
+document.addEventListener("menubutton", function () {
   localStorage.setItem('date', Date());
 }, false);
 
