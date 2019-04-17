@@ -5,14 +5,19 @@ var huncon = document.getElementById('huncon');
 var hunbar = document.getElementById('hunbar');
 
 function onload() {
-  document.addEventListener("deviceready", test, false);
+  document.addEventListener("deviceready", onDeviceReady, false);
 }
 
-document.addEventListener("pause", function () {
-  localStorage.date = Date();
-}, false);
+function onDeviceReady() {
+  document.addEventListener("pause", onPause, false);
 
-document.addEventListener("resume", onResume, false);
+  document.addEventListener("resume", onResume, false);
+  test()
+}
+
+function onPause() {
+  localStorage.date = Date();
+}
 
 //variabels
 var windowWidth = window.innerWidth;
