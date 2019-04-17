@@ -12,8 +12,7 @@ document.addEventListener("pause", function () {
   localStorage.date = Date();
 }, false);
 
-document.addEventListener("resume", test, false);
-
+document.addEventListener("resume", onResume, false);
 
 //variabels
 var windowWidth = window.innerWidth;
@@ -24,6 +23,10 @@ var pixelRatio = window.devicePixelRatio || 1; /// get pixel ratio of device
 var b = true;
 var height = 119.4;
 var text;
+
+function onResume() {
+    text = "yay"
+}
 
 // load images
 var piece = new Image();
@@ -60,11 +63,11 @@ function test() {
   huX = canvasMain.width / 13.91752577319588;
   huY = 64.7;
 
-  if (localStorage.date) {
+/*  if (localStorage.date) {
     text = localStorage.date;
   } else {
     text = "Sorry bro";
-  }
+  }*/
   draw()
 }
 
