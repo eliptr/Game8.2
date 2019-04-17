@@ -72,13 +72,7 @@ function test() {
   huY = 64.7;
 
   if (localStorage.date) {
-    text = localStorage.date;
-  } else {
-    text = "Sorry bro";
-  }
-
-  if (localStorage.date) {
-    height = JSON.parse(localStorage.date) - (finaldif * 0.0987);
+    height = d2 - (finaldif * 0.0987);
   } else {
     height = 119.4;
   }
@@ -98,6 +92,8 @@ function draw() {
 
   huncon.style.left = 475 / 3.068669527896996 + "px";
   huncon.style.top = 27 + "px";
+
+  hunbar.style.height = height + "px";
 
   ctx.drawImage(pad, paX, paY);
   ctx.drawImage(piece, pX, pY);
