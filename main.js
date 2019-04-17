@@ -9,7 +9,7 @@ function onload() {
 }
 
 document.addEventListener("pause", function () {
-  localStorage.setItem('date', Date());
+  localStorage.date = Date();
 }, false);
 
 document.addEventListener("resume", onResume, false);
@@ -63,10 +63,8 @@ function test() {
   huX = canvasMain.width / 13.91752577319588;
   huY = 64.7;
 
-  text = localStorage.getItem('date');
-
-  if (localStorage.getItem('date')) {
-    text = localStorage.getItem('date');
+  if (localStorage.date) {
+    text = localStorage.date;
   } else {
     text = "Sorry bro";
   }
