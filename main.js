@@ -12,11 +12,8 @@ document.addEventListener("pause", function () {
   localStorage.date = Date();
 }, false);
 
-document.addEventListener("resume", onResume, false);
+document.addEventListener("resume", test, false);
 
-function onResume() {
-    test()
-}
 
 //variabels
 var windowWidth = window.innerWidth;
