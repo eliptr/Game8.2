@@ -72,7 +72,7 @@ function test() {
   huY = 64.7;
 
   if (localStorage.date) {
-    height = d2 - (finaldif * 0.0987);
+    height = localStorage.date - (finaldif * 0.0987);
   } else {
     height = 119.4;
   }
