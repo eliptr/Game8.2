@@ -10,17 +10,16 @@ function onload() {
 
 function onDeviceReady() {
   document.addEventListener("pause", onPause, false);
-
   document.addEventListener("resume", onResume, false);
   test()
 }
 
-function onResume() {
-    test()
-}
-
 function onPause() {
   localStorage.date = Date();
+}
+
+function onResume() {
+    test()
 }
 
 //variabels
@@ -32,6 +31,10 @@ var pixelRatio = window.devicePixelRatio || 1; /// get pixel ratio of device
 var b = true;
 var height = 119.4;
 var text;
+var d1 = new Date();
+var d2 = Date.parse(localStorage.date);
+var diff = Math.abs(d1-d2);  // difference in milliseconds
+var finaldif = Math.floor(diff / 1000);
 
 // load images
 var piece = new Image();
@@ -72,6 +75,12 @@ function test() {
     text = localStorage.date;
   } else {
     text = "Sorry bro";
+  }
+
+  if (localStorage.date) {
+    height = JSON.parse(localStorage.date) - (finaldif * 0.0987);
+  } else {
+    height = 119.4;
   }
   draw()
 }
