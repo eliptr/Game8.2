@@ -16,6 +16,7 @@ function onDeviceReady() {
 
 function onPause() {
   localStorage.date = Date();
+  localStorage.hei = JSON.stringify(height);
 }
 
 function onResume() {
@@ -72,7 +73,7 @@ function test() {
   huX = canvasMain.width / 13.91752577319588;
   huY = 64.7;
 
-  if (localStorage.date) {
+  if (localStorage.hei) {
     height = JSON.parse(localStorage.getItem('hei')) - (finaldif * 0.0987);
   } else {
     height = 119.4;
@@ -96,8 +97,6 @@ function draw() {
   huncon.style.top = 27 + "px";
 
   hunbar.style.height = height + "px";
-
-  localStorage.setItem('hei', JSON.stringify(height));
 
   ctx.drawImage(pad, paX, paY);
   ctx.drawImage(piece, pX, pY);
