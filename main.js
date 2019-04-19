@@ -35,6 +35,7 @@ var d1 = new Date();
 var d2 = Date.parse(localStorage.date);
 var diff = Math.abs(d1-d2);  // difference in milliseconds
 var finaldif = Math.floor(diff / 1000);
+var down = 0.00016;
 
 // load images
 var piece = new Image();
@@ -72,11 +73,12 @@ function test() {
   huY = 64.7;
 
   if (localStorage.date) {
-    height = localStorage.date - (finaldif * 0.0987);
+    height = JSON.parse(localStorage.getItem('hei')) - (finaldif * 0.0987);
   } else {
     height = 119.4;
   }
   draw()
+  hungerStopping()
 }
 
 
@@ -95,6 +97,8 @@ function draw() {
 
   hunbar.style.height = height + "px";
 
+  localStorage.setItem('hei', JSON.stringify(height));
+
   ctx.drawImage(pad, paX, paY);
   ctx.drawImage(piece, pX, pY);
   ctx.drawImage(floor, fX, fY);
@@ -105,6 +109,12 @@ function draw() {
 
   requestAnimationFrame(traychange, 10);
   requestAnimationFrame(draw, 10);
+  requestAnimationFrame(hungerGoingDown, 100);
+}
+
+function hungerGoingDown() {
+  height = height - down;
+  document.getElementById('hunbar').style.height = height + "px";
 }
 
 function traychange() {
@@ -122,4 +132,15 @@ function traychange() {
 
 function trach() {
   b = !b;
+}
+
+function hungerStopping() {
+  if (height < 0) {
+    height = 0;
+    down = 0;
+  }
+  if (height > 119.4) {
+    height = 119.4;
+  }
+  setInterval(hungerStopping, 10);
 }
