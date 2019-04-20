@@ -3,6 +3,7 @@ var ctx = canvasMain.getContext('2d');
 var traybut = document.getElementById('traybut');
 var huncon = document.getElementById('huncon');
 var hunbar = document.getElementById('hunbar');
+var apple = document.getElementById('apple');
 
 function onload() {
   document.addEventListener("deviceready", onDeviceReady, false);
@@ -54,6 +55,12 @@ hotdog.src = "images/hotdog.png";
 hunger.src = "images/hunger.png";
 
 function test() {
+  windowWidth = window.innerWidth;
+  windowHeight = window.innerHeight;
+  windowWidth = window.innerWidth;
+  windowHeight = window.innerHeight;
+  pixelRatio = window.devicePixelRatio || 1; /// get pixel ratio of device
+
   // fixed canvas resolution
   canvasMain.width = windowWidth * pixelRatio;   /// resolution of canvas
   canvasMain.height = windowHeight * pixelRatio;
@@ -92,6 +99,9 @@ function draw() {
 
   traybut.style.bottom = 20 + "px";
   traybut.style.left = 3.5 + "px";
+
+  apple.style.bottom = 145 + "px";
+  apple.style.left = 80 + "px";
 
   huncon.style.left = 475 / 3.068669527896996 + "px";
   huncon.style.top = 27 + "px";
@@ -142,4 +152,9 @@ function hungerStopping() {
     height = 119.4;
   }
   setInterval(hungerStopping, 10);
+}
+
+function onapple() {
+  height = height + 15;
+  down = 0.00016;
 }

@@ -32,7 +32,7 @@ body {
   padding: 0px;
   margin: 0px;
   background-color: rgba(255, 0, 0, 0);
-/*  background-image: url("images/traysmall.png");*/
+/*  background-image: url("images/tray.png"); */
 }
 
 .huncon {
@@ -49,4 +49,16 @@ body {
 .hunbar {
   background-color: #048998;
   width: 9.2px;
+}
+
+.apple {
+  background-color: rgba(255, 0, 0, 0)/*#ff8364*/;
+  width: 97px;
+  height: 52px;
+  box-shadow: none;
+  outline: none;
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
+  position: fixed;
 }
