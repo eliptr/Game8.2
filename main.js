@@ -22,6 +22,7 @@ function onPause() {
 
 function onResume() {
     test()
+    text = finaldif;
 }
 
 //variabels
@@ -158,3 +159,13 @@ function onapple() {
   height = height + 15;
   down = 0.00016;
 }
+
+function counter() {
+    var i = 0;
+    // This block will be executed 100 times.
+    setInterval(function(){
+        if (i == 100) clearInterval(this);
+        else text = height;
+    }, 1000);
+} // End
+counter()

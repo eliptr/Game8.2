@@ -16,3 +16,6 @@
 [0417/210117.242:ERROR:file_io_win.cc(179)] CreateFile C:\Program Files (x86)\Google\Chrome\settings.dat: Δεν επιτρέπεται η πρόσβαση. (0x5)
 [0417/210117.247:ERROR:registration_protocol_win.cc(84)] TransactNamedPipe: Η διοχέτευση έχει τερματιστεί. (0x6D)
 [0417/210117.248:ERROR:file_io_win.cc(179)] CreateFile C:\Program Files (x86)\Google\Chrome\settings.dat: Δεν επιτρέπεται η πρόσβαση. (0x5)
+[0420/132937.083:ERROR:file_io_win.cc(179)] CreateFile C:\Program Files (x86)\Google\Chrome\settings.dat: Δεν επιτρέπεται η πρόσβαση. (0x5)
+[0420/132937.085:ERROR:registration_protocol_win.cc(84)] TransactNamedPipe: Η διοχέτευση έχει τερματιστεί. (0x6D)
+[0420/132937.086:ERROR:file_io_win.cc(179)] CreateFile C:\Program Files (x86)\Google\Chrome\settings.dat: Δεν επιτρέπεται η πρόσβαση. (0x5)
